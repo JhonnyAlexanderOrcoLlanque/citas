@@ -1,0 +1,29 @@
+# Ignorar directorio target generado por Maven
+target/
+
+# Ignorar archivos de control de versiones
+.git/
+.gitignore
+
+# Ignorar archivos README
+README.md
+README.txt
+
+# Ignorar archivos de configuración de IDEs
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Ignorar archivos de configuración de sistemas operativos
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos temporales de compilación y logs
+*.log
+*.tmp
+*.swp
+
+# Ignorar archivos de configuración personales
+*.env
+.env
