@@ -6,16 +6,16 @@ import jakarta.persistence.*;
 @Table(name="Medico")
 public class Medico {
     @Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private long id;
+
     private String nombre;
     private String especialidad;
     private String telefono;
     private String email;
-    private String consultorioId;
-    private String idCola;
+    private long consultorioId;
+    private long idCola;
     private int cuentaBancaria;
 
     // Constructores
@@ -23,7 +23,7 @@ public class Medico {
     }
 
     public Medico(long id, int cuentaBancaria, String nombre, String especialidad, String telefono,
-                  String email, String consultorioId, String idCola) {
+                  String email, long consultorioId, long idCola) {
         this.id = id;
         this.cuentaBancaria = cuentaBancaria;
         this.nombre = nombre;
@@ -34,21 +34,21 @@ public class Medico {
         this.idCola = idCola;
     }
 
-    //Metodos
-    public void verCola(){
-        //IMPLEMENTAR
+    // Métodos
+    public void verCola() {
+        // IMPLEMENTAR
     }
 
-    public void verCita(){
-        //IMPLEMENTAR
+    public void verCita() {
+        // IMPLEMENTAR
     }
 
-    public void atenderCita(){
-        //IMPLEMENTAR
+    public void atenderCita() {
+        // IMPLEMENTAR
     }
 
-    public void rechazarCita(){
-        //IMPLEMENTAR
+    public void rechazarCita() {
+        // IMPLEMENTAR
     }
 
     // Métodos getters y setters
@@ -100,21 +100,19 @@ public class Medico {
         this.email = email;
     }
 
-    public String getConsultorioId() {
+    public long getConsultorioId() {
         return consultorioId;
     }
 
-    public void setConsultorioId(String consultorioId) {
+    public void setConsultorioId(long consultorioId) {
         this.consultorioId = consultorioId;
     }
 
-    public String getIdCola() {
+    public long getIdCola() {
         return idCola;
     }
 
-    public void setIdCola(String idCola) {
+    public void setIdCola(long idCola) {
         this.idCola = idCola;
     }
 }
-
-

@@ -10,4 +10,3 @@ public interface CitaRepository extends JpaRepository<Cita, Long> {
    //Implementar aqui 
 }
 
-

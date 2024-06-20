@@ -1,3 +1,4 @@
+
 package com.sis324.citas.model;
 
 import jakarta.persistence.*;
@@ -11,20 +12,18 @@ public class Cita {
 	@Column(unique = true, nullable = false)
 
     private long id;
-    private String pacienteId;
-    private String medicoId;
+    private long medicoId;
+    private long idCola;
+    private long pacienteId;
     private String fechaAtencion;
     private String horaAtencion;
-    private String idCola;
     private String estadoCita;
 
-    // Constructor vacío (por defecto)
     public Cita() {
     }
 
-    // Constructor con todos los atributos
-    public Cita(long id, String pacienteId, String medicoId, String fechaAtencion,
-                String horaAtencion, String idCola, String estadoCita) {
+    public Cita(long id, long pacienteId, long medicoId,  long idCola, 
+            String fechaAtencion, String horaAtencion, String estadoCita) {
         this.id = id;
         this.pacienteId = pacienteId;
         this.medicoId = medicoId;
@@ -34,12 +33,10 @@ public class Cita {
         this.estadoCita = estadoCita;
     }
 
-    //Metodos
-    void generarRecibo(){
-        //IMPLEMENTAR
+    public void generarRecibo(){
+       
     }
 
-    // Métodos getters y setters
     public long getId() {
         return id;
     }
@@ -48,19 +45,19 @@ public class Cita {
         this.id = id;
     }
 
-    public String getPacienteId() {
+    public long getPacienteId() {
         return pacienteId;
     }
 
-    public void setPacienteId(String pacienteId) {
+    public void setPacienteId(long pacienteId) {
         this.pacienteId = pacienteId;
     }
 
-    public String getMedicoId() {
+    public long getMedicoId() {
         return medicoId;
     }
 
-    public void setMedicoId(String medicoId) {
+    public void setMedicoId(long medicoId) {
         this.medicoId = medicoId;
     }
 
@@ -80,11 +77,11 @@ public class Cita {
         this.horaAtencion = horaAtencion;
     }
 
-    public String getIdCola() {
+    public long getIdCola() {
         return idCola;
     }
 
-    public void setIdCola(String idCola) {
+    public void setIdCola(long idCola) {
         this.idCola = idCola;
     }
 

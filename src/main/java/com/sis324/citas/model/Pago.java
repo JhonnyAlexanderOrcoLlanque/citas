@@ -6,13 +6,13 @@ import jakarta.persistence.*;
 @Table(name="Pago")
 public class Pago {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private long id;
-    private String pacienteId;
-    private String medicoId;
+
+    private long pacienteId;
+    private long medicoId;
     private double monto;
     private String fecha;
 
@@ -20,7 +20,7 @@ public class Pago {
     public Pago() {
     }
 
-    public Pago(long id, String pacienteId, String medicoId, double monto, String fecha) {
+    public Pago(long id, long pacienteId, long medicoId, double monto, String fecha) {
         this.id = id;
         this.pacienteId = pacienteId;
         this.medicoId = medicoId;
@@ -28,13 +28,10 @@ public class Pago {
         this.fecha = fecha;
     }
 
-    //Metodos
-    public void deletePago(){
-        //Implementar
+    // Métodos
+    public void deletePago() {
+        // Implementar
     }
-
-
-
 
     // Métodos getters y setters
     public long getId() {
@@ -45,19 +42,19 @@ public class Pago {
         this.id = id;
     }
 
-    public String getPacienteId() {
+    public long getPacienteId() {
         return pacienteId;
     }
 
-    public void setPacienteId(String pacienteId) {
+    public void setPacienteId(long pacienteId) {
         this.pacienteId = pacienteId;
     }
 
-    public String getMedicoId() {
+    public long getMedicoId() {
         return medicoId;
     }
 
-    public void setMedicoId(String medicoId) {
+    public void setMedicoId(long medicoId) {
         this.medicoId = medicoId;
     }
 

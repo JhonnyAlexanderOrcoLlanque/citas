@@ -8,11 +8,9 @@ import com.sis324.citas.repository.CitaRepository;
 import com.sis324.citas.model.Cita;
 
 @Service
-
 public class CitaService {
     @Autowired
     CitaRepository citaRepository;
-
 
     public ArrayList<Cita> getCitas(){
         return ((ArrayList<Cita>) citaRepository.findAll());
@@ -31,3 +29,7 @@ public class CitaService {
 		}
 	}
 }
+
+
+
+
