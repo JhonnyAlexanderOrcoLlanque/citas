@@ -6,8 +6,13 @@ WORKDIR /app
 
 # Copia el archivo pom.xml y el archivo de configuración de Maven
 COPY pom.xml .
+
+# Copia los archivos de dependencia y los plugins necesarios para el build
 COPY mvnw .
 COPY .mvn .mvn
+
+# Cambia los permisos del script mvnw para hacerlo ejecutable
+RUN chmod +x mvnw
 
 # Descarga las dependencias necesarias para la compilación
 RUN ./mvnw dependency:go-offline
