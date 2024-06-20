@@ -1,21 +1,27 @@
-# Etapa de construcción
-FROM maven:3.8.4-openjdk-21 AS build
+# Usa una imagen base oficial de OpenJDK para JDK 21
+FROM eclipse-temurin:21-jdk-jammy
+
+# Establece el directorio de trabajo en /app
 WORKDIR /app
 
-# Copiar el archivo pom.xml y descargar las dependencias necesarias
+# Copia el archivo pom.xml y el archivo de configuración de Maven
 COPY pom.xml .
-RUN mvn dependency:go-offline
 
-# Copiar el código fuente y construir la aplicación
+# Copia los archivos de dependencia y los plugins necesarios para el build
+COPY mvnw .
+COPY .mvn .mvn
+
+# Instala las dependencias necesarias
+RUN ./mvnw dependency:go-offline
+
+# Copia el resto del código de la aplicación al contenedor
 COPY src ./src
-RUN mvn clean package -DskipTests
 
-# Etapa de despliegue
-FROM openjdk:21-jdk-slim
-WORKDIR /app
+# Compila la aplicación
+RUN ./mvnw package -DskipTests
 
-# Copiar el archivo JAR desde la etapa de construcción
-COPY --from=build /app/target/*.jar app.jar
+# Expone el puerto en el que tu aplicación estará escuchando
+EXPOSE 8080
 
-# Ejecutar la aplicación
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Define el comando que se ejecutará cuando el contenedor se inicie
+CMD ["java", "-jar", "target/citas-0.0.1-SNAPSHOT.jar"]
