@@ -1,3 +1,4 @@
+//CitaRepository.java
 package com.sis324.citas.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -7,6 +8,5 @@ import com.sis324.citas.model.Cita;
 
 @Repository
 public interface CitaRepository extends JpaRepository<Cita, Long> {
-   //Implementar aqui 
+    // Puedes agregar consultas personalizadas aquí si es necesario
 }
-

@@ -1,4 +1,4 @@
-
+//Cita.java
 package com.sis324.citas.model;
 
 import jakarta.persistence.*;
@@ -12,18 +12,18 @@ public class Cita {
 	@Column(unique = true, nullable = false)
 
     private long id;
-    private long medicoId;
-    private long idCola;
     private long pacienteId;
+    private long medicoId;
     private String fechaAtencion;
     private String horaAtencion;
+    private long idCola;
     private String estadoCita;
 
-    public Cita() {
-    }
+    
+    public Cita() {}
 
-    public Cita(long id, long pacienteId, long medicoId,  long idCola, 
-            String fechaAtencion, String horaAtencion, String estadoCita) {
+    // Constructor con parámetros
+    public Cita(long id, long pacienteId, long medicoId, String fechaAtencion, String horaAtencion, long idCola, String estadoCita) {
         this.id = id;
         this.pacienteId = pacienteId;
         this.medicoId = medicoId;
@@ -33,10 +33,7 @@ public class Cita {
         this.estadoCita = estadoCita;
     }
 
-    public void generarRecibo(){
-       
-    }
-
+    // Métodos get y set para cada atributo
     public long getId() {
         return id;
     }
