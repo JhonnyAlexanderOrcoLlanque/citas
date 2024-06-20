@@ -1,4 +1,4 @@
-package com.sis324.gestionColas.model;
+package com.sis324.citas.model;
 
 import jakarta.persistence.*;
 

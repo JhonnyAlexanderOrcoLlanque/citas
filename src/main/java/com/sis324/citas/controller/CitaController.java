@@ -1,4 +1,5 @@
-package com.sis324.gestionColas.controller;
+
+package com.sis324.citas.controller;
 
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +11,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.sis324.gestionColas.service.CitaService;
-import com.sis324.gestionColas.model.Cita;
+import com.sis324.citas.service.CitaService;
+import com.sis324.citas.model.Cita;
 
 @RestController
 @RequestMapping("/Citas")

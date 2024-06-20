@@ -1,9 +1,9 @@
-package com.sis324.gestionColas.repository;
+package com.sis324.citas.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.sis324.gestionColas.model.Consultorio;
+import com.sis324.citas.model.Consultorio;
 
 @Repository
 public interface ConsultorioRepository extends JpaRepository<Consultorio, Long> {

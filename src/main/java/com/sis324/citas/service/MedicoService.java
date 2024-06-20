@@ -1,12 +1,12 @@
-package com.sis324.gestionColas.service;
+package com.sis324.citas.service;
 
 
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sis324.gestionColas.repository.MedicoRepository;
-import com.sis324.gestionColas.model.Medico;
+import com.sis324.citas.repository.MedicoRepository;
+import com.sis324.citas.model.Medico;
 @Service
 public class MedicoService {
     @Autowired
