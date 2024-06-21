@@ -4,9 +4,6 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import com.sis324.citas.repository.MedicoRepository;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "Cita")
@@ -38,7 +35,6 @@ public class Cita {
         this.estadoCita = "pendiente";
     }
 
-    
     // private boolean validarCita(){
     //     List<Medico> listaMedicos = medicoRepository.findAll();
        
