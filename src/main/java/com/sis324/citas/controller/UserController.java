@@ -15,7 +15,7 @@ import com.sis324.citas.service.UserService;
 import com.sis324.citas.model.User;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/User")
 public class UserController {
 	
 	@Autowired

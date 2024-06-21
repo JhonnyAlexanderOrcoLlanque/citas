@@ -14,7 +14,7 @@ import com.sis324.citas.service.MedicoService;
 import com.sis324.citas.model.Medico;
 
 @RestController
-@RequestMapping("/Medicos")
+@RequestMapping("/Medico")
 public class MedicoController {
 	
 	@Autowired
@@ -31,7 +31,6 @@ public class MedicoController {
 	}
 	
 	@PutMapping
-    
 	public Medico edit(@RequestBody Medico medico){
 		return medicoService.save(medico);
 	}

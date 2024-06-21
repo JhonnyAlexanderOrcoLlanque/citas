@@ -14,7 +14,7 @@ import com.sis324.citas.service.ConsultorioService;
 import com.sis324.citas.model.Consultorio;
 
 @RestController
-@RequestMapping("/Consultorios")
+@RequestMapping("/Consultorio")
 public class ConsultorioController {
 	
 	@Autowired

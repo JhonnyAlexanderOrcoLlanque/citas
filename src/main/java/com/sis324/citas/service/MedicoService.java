@@ -7,6 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.sis324.citas.repository.MedicoRepository;
 import com.sis324.citas.model.Medico;
+
+
+
+import java.util.List;
 @Service
 public class MedicoService {
     @Autowired
@@ -29,5 +33,9 @@ public class MedicoService {
 		}
 	}
 
+
+    public List<Medico> getAllMedicos() {
+        return medicoRepository.findAll();
+    }
 
 }

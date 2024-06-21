@@ -1,84 +1,102 @@
-//Cita.java
 package com.sis324.citas.model;
 
 import jakarta.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+import com.sis324.citas.repository.MedicoRepository;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name="Cita")
+@Table(name = "Cita")
 public class Cita {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
 
-    private long id;
-    private long pacienteId;
-    private long medicoId;
-    private String fechaAtencion;
-    private String horaAtencion;
-    private long idCola;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
+
+    private Long id;
+    private Long pacienteId;
+    private Long medicoId;
+    private LocalDate fechaAtencion;
+    private LocalTime horaAtencion;
+    private Long idCola;
     private String estadoCita;
 
-    
+
+
+    //Constructor vacío necesario para JPA
     public Cita() {}
 
-    // Constructor con parámetros
-    public Cita(long id, long pacienteId, long medicoId, String fechaAtencion, String horaAtencion, long idCola, String estadoCita) {
-        this.id = id;
+    public Cita(Long pacienteId, Long medicoId, LocalDate fechaAtencion, LocalTime horaAtencion, Long idCola) {
         this.pacienteId = pacienteId;
         this.medicoId = medicoId;
         this.fechaAtencion = fechaAtencion;
         this.horaAtencion = horaAtencion;
         this.idCola = idCola;
-        this.estadoCita = estadoCita;
+        this.estadoCita = "pendiente";
     }
 
-    // Métodos get y set para cada atributo
-    public long getId() {
+    
+    // private boolean validarCita(){
+    //     List<Medico> listaMedicos = medicoRepository.findAll();
+       
+    //     for (Medico medico : listaMedicos) {
+    //         Long idMedico = medico.getId();
+    //         if(idMedico == medicoId)
+    //             return true;
+    //     }
+
+    //     return false;
+    // }
+
+    //Métodos getters y setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public long getPacienteId() {
+    public Long getPacienteId() {
         return pacienteId;
     }
 
-    public void setPacienteId(long pacienteId) {
+    public void setPacienteId(Long pacienteId) {
         this.pacienteId = pacienteId;
     }
 
-    public long getMedicoId() {
+    public Long getMedicoId() {
         return medicoId;
     }
 
-    public void setMedicoId(long medicoId) {
+    public void setMedicoId(Long medicoId) {
         this.medicoId = medicoId;
     }
 
-    public String getFechaAtencion() {
+    public LocalDate getFechaAtencion() {
         return fechaAtencion;
     }
 
-    public void setFechaAtencion(String fechaAtencion) {
+    public void setFechaAtencion(LocalDate fechaAtencion) {
         this.fechaAtencion = fechaAtencion;
     }
 
-    public String getHoraAtencion() {
+    public LocalTime getHoraAtencion() {
         return horaAtencion;
     }
 
-    public void setHoraAtencion(String horaAtencion) {
+    public void setHoraAtencion(LocalTime horaAtencion) {
         this.horaAtencion = horaAtencion;
     }
 
-    public long getIdCola() {
+    public Long getIdCola() {
         return idCola;
     }
 
-    public void setIdCola(long idCola) {
+    public void setIdCola(Long idCola) {
         this.idCola = idCola;
     }
 
@@ -90,3 +108,4 @@ public class Cita {
         this.estadoCita = estadoCita;
     }
 }
+

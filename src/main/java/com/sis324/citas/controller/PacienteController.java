@@ -16,7 +16,7 @@ import com.sis324.citas.service.PacienteService;
 import com.sis324.citas.model.Paciente;
 
 @RestController
-@RequestMapping("/pacientes")
+@RequestMapping("/Paciente")
 public class PacienteController {
 	
 	@Autowired

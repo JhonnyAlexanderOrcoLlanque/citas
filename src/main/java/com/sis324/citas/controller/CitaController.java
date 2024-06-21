@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sis324.citas.service.CitaService;
 import com.sis324.citas.model.Cita;
 
+
+
 @RestController
-@RequestMapping("/Citas")
+@RequestMapping("/Cita")
 public class CitaController {
 	
 	@Autowired

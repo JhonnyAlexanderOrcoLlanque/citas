@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.sis324.citas.repository.CitaRepository;
+import com.sis324.citas.repository.MedicoRepository;
 import com.sis324.citas.model.Cita;
+import com.sis324.citas.model.Medico;
+
+import java.util.Optional;
+
 
 @Service
 public class CitaService {
@@ -27,4 +32,17 @@ public class CitaService {
 			return false;
 		}
 	}
+
+    private final MedicoRepository medicoRepository;
+
+    @Autowired
+    public CitaService(MedicoRepository medicoRepository) {
+        this.medicoRepository = medicoRepository;
+    }
+
+    public boolean validarCita(Long medicoId) {
+        Optional<Medico> medico = medicoRepository.findById(medicoId);
+        return medico.isPresent();
+    }
+      
 }

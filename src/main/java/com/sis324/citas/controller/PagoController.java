@@ -14,7 +14,7 @@ import com.sis324.citas.service.PagoService;
 import com.sis324.citas.model.Pago;
 
 @RestController
-@RequestMapping("/Pagos")
+@RequestMapping("/Pago")
 public class PagoController {
 	
 	@Autowired

@@ -17,7 +17,7 @@ public class Medico {
     private long consultorioId;
     private long idCola;
     private int cuentaBancaria;
-
+    
     // Constructores
     public Medico() {
     }
@@ -44,7 +44,7 @@ public class Medico {
     }
 
     public void atenderCita() {
-        // IMPLEMENTAR
+        
     }
 
     public void rechazarCita() {

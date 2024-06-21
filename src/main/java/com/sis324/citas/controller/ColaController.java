@@ -14,7 +14,7 @@ import com.sis324.citas.service.ColaService;
 import com.sis324.citas.model.Cola;
 
 @RestController
-@RequestMapping("/Colas")
+@RequestMapping("/Cola")
 public class ColaController {
 	
 	@Autowired

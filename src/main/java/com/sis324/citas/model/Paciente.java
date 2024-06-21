@@ -1,5 +1,4 @@
 package com.sis324.citas.model;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -14,17 +13,18 @@ public class Paciente {
 	private String nombre;
 	private String email;
 	private String contrasena;
-
     private String direccion;
     private double telefono;
     private int cuentaBancaria;
     private String fechaNacimiento;
 	private String historialMedico;
+
+    
     //private boolean activo;
     
     //Constructores
     public Paciente() {
-
+        
     }
 
     public Paciente(Long id, String nombre, String email, String contrasena, String direccion,
@@ -41,7 +41,9 @@ public class Paciente {
         //this.activo = true;
     }
 
-    //Metodos
+    
+    
+
     public void eliminarPaciente() {
         //this.activo = false;
     }
